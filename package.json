@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "cypress": "^13.7.1",
+    "cypress-mailhog": "^2.3.0"
+  },
+  "dependencies": {
+    "mailslurp": "^0.0.1-security"
+  }
+}
