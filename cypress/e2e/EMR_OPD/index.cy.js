@@ -6,7 +6,7 @@ describe("Login with OTP Tests", () => {
         cy.get('#loginForm_username').type("17378")
         cy.get('#loginForm_password').type("123")
         cy.get('.ant-btn').click() 
-    });
+    }); 
     it('forgot', () => {
         
     });
