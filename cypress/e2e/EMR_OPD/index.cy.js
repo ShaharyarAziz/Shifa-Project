@@ -6,6 +6,7 @@ import url from "./url.cy";
 describe("Main Login", () => {
   beforeEach(() => {
     cy.visit(url);
+    cy.viewport('macbook-16')
   });
   it("login", () => {
     cy.get("#loginForm_username").type(17378);
@@ -23,7 +24,10 @@ describe("Main Login", () => {
     // const doctorName = "Umar Yousaf Raja (Endocrinologist)";
 
     //Patient Select
-    cy.get(".patient-name-text").click();
+    // cy.get(
+    //   '[data-row-key="1"] > :nth-child(4) > .patient-name > a > .patient-name-text'
+    // ).click();
+    cy.get('[data-row-key="2"] > :nth-child(4) > .patient-name > a > .patient-name-text').click()
     //Initial History and Physical
     // cy.get(".tab-row > :nth-child(2)").click();
     // cy.get('.ant-row > :nth-child(1) > .ant-btn').click()
@@ -111,12 +115,32 @@ describe("Main Login", () => {
       "#hemoglobin > .ant-row > .g-bg > .ant-checkbox-wrapper > :nth-child(2)"
     ).click();
     cy.get(
-      ":nth-child(7) > :nth-child(1) > .ant-popover > .ant-popover-content > .ant-popover-inner > .ant-popover-inner-content > :nth-child(2) > .ant-col > .popover-btn > :nth-child(2) > .ant-btn"
+      ":nth-child(6) > :nth-child(1) > .ant-popover > .ant-popover-content > .ant-popover-inner > .ant-popover-inner-content > :nth-child(2) > .ant-col > .popover-btn > :nth-child(2) > .ant-btn"
     ).click();
 
     //Functional Assessment
-    cy.get(':nth-child(12) > :nth-child(1) > .ant-col-11 > :nth-child(1) > :nth-child(1) > .ant-col-2').click()
+    cy.get(':nth-child(12) > :nth-child(1) > .ant-col-11 > :nth-child(1) > :nth-child(1) > .ant-col-2').click();
+    //Level of Consciouness
+    cy.get('#level_of_conscious > .ant-row > .g-bg > .text-align > :nth-child(2)').click()
+    //Sensory
+    cy.get('#sensory > :nth-child(1) > .g-bg > .text-align > :nth-child(2)').click()
+    //Speech
+    cy.get('#speech > :nth-child(1) > .g-bg > .text-align > :nth-child(2)').click()
+    //Vision
+    cy.get('#vision > :nth-child(1) > .g-bg > .text-align > :nth-child(2)').click()
+    //Hearing
+    cy.get('#hearing > :nth-child(1) > .g-bg > .text-align > :nth-child(2)').click()
+    // Add Button
+    cy.get(':nth-child(7) > :nth-child(1) > .ant-popover > .ant-popover-content > .ant-popover-inner > .ant-popover-inner-content > :nth-child(2) > .ant-col > .popover-btn > :nth-child(2) > .ant-btn').click()
+
     //Save Button
-    // cy.get('.ant-row > :nth-child(1) > .ant-btn').click()
+    cy.get('.ant-row > :nth-child(1) > .ant-btn').click()
+    //Verify ACCOUNT
+    //Username
+    cy.get('#verificationForm_username').type(17378)
+    //Password
+    cy.get('#verificationForm_password').type(123)
+    //Verify Button
+    // cy.get('.ant-modal-footer > .ant-btn-primary').click()
   });
 });
