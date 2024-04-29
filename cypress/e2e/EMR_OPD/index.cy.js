@@ -62,13 +62,11 @@ describe("Main Login", () => {
     //BSA
     // cy.get('#vitals-form_vitals_13_result').type(30)
     //Falls Risk Screening
-    cy.get(
-      "#vitals-form_vitals_2_result > .ant-row > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    // cy.get(
+    //   "#vitals-form_vitals_2_result > .ant-row > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    // ).click();
     //Falls Assessment
-    cy.get(
-      ":nth-child(6) > :nth-child(1) > .ant-col-11 > :nth-child(1) > :nth-child(1) > .ant-col-2"
-    ).click();
+    cy.get(':nth-child(6) > :nth-child(1) > .ant-col-11 > :nth-child(1) > :nth-child(1) > .ant-col-2').click();
     //Morse Fall Scale
     cy.get(
       "#history_falling > .ant-row > .ant-col-4 > .ant-checkbox-wrapper > :nth-child(2)"
