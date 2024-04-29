@@ -8,8 +8,19 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 //
-//
+import url from "../e2e/EMR_OPD/url.cy";
 // -- This is a parent command --
+// Define a custom Cypress command for login
+Cypress.Commands.add("login", () => {
+  describe("Login", () => {
+    it("Login", () => {
+      // cy.visit(url);
+      cy.get("#loginForm_username").type(17378);
+      cy.get("#loginForm_password").type(123);
+      cy.get(".ant-btn").click();
+    });
+  });
+});
 
 //
 // -- This is a child command --
