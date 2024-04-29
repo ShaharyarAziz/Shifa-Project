@@ -6,7 +6,7 @@ import url from "./url.cy";
 describe("Main Login", () => {
   beforeEach(() => {
     cy.visit(url);
-    cy.viewport('macbook-16')
+    cy.viewport("macbook-16");
   });
   it("login", () => {
     cy.get("#loginForm_username").type(17378);
@@ -27,7 +27,9 @@ describe("Main Login", () => {
     // cy.get(
     //   '[data-row-key="1"] > :nth-child(4) > .patient-name > a > .patient-name-text'
     // ).click();
-    cy.get('[data-row-key="2"] > :nth-child(4) > .patient-name > a > .patient-name-text').click()
+    cy.get(
+      '[data-row-key="2"] > :nth-child(4) > .patient-name > a > .patient-name-text'
+    ).click();
     //Initial History and Physical
     // cy.get(".tab-row > :nth-child(2)").click();
     // cy.get('.ant-row > :nth-child(1) > .ant-btn').click()
@@ -37,6 +39,8 @@ describe("Main Login", () => {
     // cy.get('#vitals-form_isolation_needed > :nth-child(1) > .ant-radio > .ant-radio-input').click()
     //Mode Of Arrival
     // cy.get('#vitals-form_mode_of_arrival > :nth-child(1) > .ant-radio > .ant-radio-input').click()
+
+    // ----------------------------------------------Vitals Form----------------------------------------------------------------
     //Temperature
     cy.get("#vitals-form_vitals_0_result").type(100);
     //Pulse
@@ -66,7 +70,9 @@ describe("Main Login", () => {
     //   "#vitals-form_vitals_2_result > .ant-row > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
     // ).click();
     //Falls Assessment
-    cy.get(':nth-child(6) > :nth-child(1) > .ant-col-11 > :nth-child(1) > :nth-child(1) > .ant-col-2').click();
+    cy.get(
+      ":nth-child(6) > :nth-child(1) > .ant-col-11 > :nth-child(1) > :nth-child(1) > .ant-col-2"
+    ).click();
     //Morse Fall Scale
     cy.get(
       "#history_falling > .ant-row > .ant-col-4 > .ant-checkbox-wrapper > :nth-child(2)"
@@ -117,27 +123,45 @@ describe("Main Login", () => {
     ).click();
 
     //Functional Assessment
-    cy.get(':nth-child(12) > :nth-child(1) > .ant-col-11 > :nth-child(1) > :nth-child(1) > .ant-col-2').click();
+    cy.get(
+      ":nth-child(12) > :nth-child(1) > .ant-col-11 > :nth-child(1) > :nth-child(1) > .ant-col-2"
+    ).click();
     //Level of Consciouness
-    cy.get('#level_of_conscious > .ant-row > .g-bg > .text-align > :nth-child(2)').click()
+    cy.get(
+      "#level_of_conscious > .ant-row > .g-bg > .text-align > :nth-child(2)"
+    ).click();
     //Sensory
-    cy.get('#sensory > :nth-child(1) > .g-bg > .text-align > :nth-child(2)').click()
+    cy.get(
+      "#sensory > :nth-child(1) > .g-bg > .text-align > :nth-child(2)"
+    ).click();
     //Speech
-    cy.get('#speech > :nth-child(1) > .g-bg > .text-align > :nth-child(2)').click()
+    cy.get(
+      "#speech > :nth-child(1) > .g-bg > .text-align > :nth-child(2)"
+    ).click();
     //Vision
-    cy.get('#vision > :nth-child(1) > .g-bg > .text-align > :nth-child(2)').click()
+    cy.get(
+      "#vision > :nth-child(1) > .g-bg > .text-align > :nth-child(2)"
+    ).click();
     //Hearing
-    cy.get('#hearing > :nth-child(1) > .g-bg > .text-align > :nth-child(2)').click()
+    cy.get(
+      "#hearing > :nth-child(1) > .g-bg > .text-align > :nth-child(2)"
+    ).click();
     // Add Button
-    cy.get(':nth-child(7) > :nth-child(1) > .ant-popover > .ant-popover-content > .ant-popover-inner > .ant-popover-inner-content > :nth-child(2) > .ant-col > .popover-btn > :nth-child(2) > .ant-btn').click()
+    cy.get(
+      ":nth-child(7) > :nth-child(1) > .ant-popover > .ant-popover-content > .ant-popover-inner > .ant-popover-inner-content > :nth-child(2) > .ant-col > .popover-btn > :nth-child(2) > .ant-btn"
+    ).click();
 
     //Save Button
-    cy.get('.ant-row > :nth-child(1) > .ant-btn').click()
+    cy.get(".ant-row > :nth-child(1) > .ant-btn").click();
     //Verify ACCOUNT
     //Username
-    cy.get('#verificationForm_username').type(17378)
+    cy.get("#verificationForm_username").type(17378);
     //Password
-    cy.get('#verificationForm_password').type(123)
+    cy.get("#verificationForm_password").type(123);
+    //See Password
+    cy.get(
+      ":nth-child(5) > .ant-form-item > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input-suffix"
+    ).click();
     //Verify Button
     // cy.get('.ant-modal-footer > .ant-btn-primary').click()
   });
