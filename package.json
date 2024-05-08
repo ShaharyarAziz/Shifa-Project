@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "cypress": "^13.7.1",
+    "cypress-file-upload": "^5.0.8",
     "cypress-mailhog": "^2.3.0"
   },
   "dependencies": {

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#CBD-200] CBD Meeting(29-04-2024)</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://shifa-test.atlassian.net/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [CBD-200]&nbsp;<a href="https://shifa-test.atlassian.net/browse/CBD-200">CBD Meeting(29-04-2024)</a>
+            <span class="subText">
+               Created: 30/Apr/24                   &nbsp;Updated: 30/Apr/24
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">To Do</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Project:</b></td>
+        <td width="80%"><a href="https://shifa-test.atlassian.net/secure/BrowseProject.jspa?id=10180">CBD NEXTGEN</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Components:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Affects versions:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Fix versions:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Type:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Task
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Medium
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:9347eada-9d0c-4667-be45-d58a30ce2b42"
+                id="word_reporter_712020:9347eada-9d0c-4667-be45-d58a30ce2b42"
+                href="https://shifa-test.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3A9347eada-9d0c-4667-be45-d58a30ce2b42">
+                    Shaharyar Aziz Butt
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="6183cd16580063006903e696"
+                id="word_assignee_6183cd16580063006903e696"
+                href="https://shifa-test.atlassian.net/secure/ViewProfile.jspa?accountId=6183cd16580063006903e696">
+                    Talha Mobeen
+                </a>
+
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolution:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Unresolved
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votes:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Labels:</b>
+        </td>
+        <td id="labels-28136-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            None
+                    </td>
+    </tr>
+    
+    	<tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Σ Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+                    </td>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Σ Time Spent:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+                    </td>
+                <td bgcolor="#f0f0f0" width="20%"><b>Time Spent:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Σ Original Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+                    </td>
+                <td bgcolor="#f0f0f0" width="20%"><b>Original estimate:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+    
+
+
+<tr><td bgcolor="#f0f0f0" width="20%" valign="top"><b>Sub-tasks:</b></td>
+    <td bgcolor="#ffffff" valign="top">
+        <table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr bgcolor="#f0f0f0">
+                <td>
+                    <b>Key</b><br/>
+                </td>
+                <td>
+                    <b>Summary</b><br/>
+                </td>
+                <td>
+                    <b>Type</b><br/>
+                </td>
+                <td>
+                    <b>Status</b><br/>
+                </td>
+                <td>
+                    <b>Assignee</b><br/>
+                </td>
+            </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-201">CBD-201</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-201">Add toast message &quot;Empty list&quot; instea...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-202">CBD-202</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-202">Add not listed option in Diagnosis dr...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-203">CBD-203</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-203">Isolation Advice option is Mandatory,...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-204">CBD-204</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-204">(DD-MM-YY) Format</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-205">CBD-205</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-205">Proposed date of Surgery should be gr...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-206">CBD-206</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-206">Admitted and Not Admitted Check box o...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-207">CBD-207</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-207">Add Insurance/ Government in Regular ...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-208">CBD-208</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-208">In case of not listed diagnosis secti...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-209">CBD-209</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-209">Add Submitted By heading instead of C...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-210">CBD-210</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-210">Provide Inactive button in Dashboard ...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-211">CBD-211</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-211">Add complete check on approval details.</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-212">CBD-212</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-212">Change label of &quot;Summaries&quot; on side b...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-213">CBD-213</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-213">Add Face Sheet option in MR.NO coloumn.</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-214">CBD-214</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-214">Hover over nnumber of attendant name ...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-215">CBD-215</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-215">Add radio buttons (&#39;Contains&#39;, &#39;Both&#39;...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-216">CBD-216</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-216">Dropdown increase width panel and sub...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-217">CBD-217</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-217"> In approval details , add dropdown f...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-218">CBD-218</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-218"> Manually check for admission on dash...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-219">CBD-219</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-219">In Pre-Auth form add son and daughter...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-220">CBD-220</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-220">Attendant Relation dropdown add son a...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-221">CBD-221</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-221"> Add masking for &#39;0&#39; at start of cont...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-222">CBD-222</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-222">Add thumbnail on Document upload time.</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-223">CBD-223</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-223">Remove Company Field,Add Surgeon Fee ...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-224">CBD-224</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://shifa-test.atlassian.net/browse/CBD-224">Add Insurance ID field in all pre_auth</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        To Do
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                    </table>
+    </td>
+</tr>
+
+                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Rank:</b></td>
+                <td id="customfield_10019-28136-value" class="value" bgcolor="#ffffff" width="80%">      1|i01b3y:zzzzi
+  </td>
+            </tr>
+            </table>
+
+
+Generated at Tue Apr 30 07:09:58 UTC 2024 by Shaharyar Aziz Butt using Jira 1001.0.0-SNAPSHOT#100251-rev:1988caf49dac9da7bdc48818ae1771ea89d869ba.
+
+</body>
+</html>
