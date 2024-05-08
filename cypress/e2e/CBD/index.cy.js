@@ -13,6 +13,7 @@ describe("Main Login", () => {
     cy.get("#loginForm_password").type("123");
     cy.get(".ant-btn").click();
     cy.get(".ant-notification-notice").should("exist");
+    
     //Patient Select
     // cy.get(".ant-radio-button-wrapper-checked > :nth-child(2)").click();
     // cy.get(
@@ -26,8 +27,9 @@ describe("Main Login", () => {
     //Document Type
     cy.get('#rc_select_0').click()
     cy.contains("Medical Card").click()
+    
     // Browse Document 
-    // cy.get('#attachment').attachFile('CBD-200.doc');
+    cy.get('#attachment').selectFile('C:\\Users\\shaharyar.aziz\\Downloads\\Corporate Portal Checklist.pdf');
     cy.get('.ant-btn').click()
 
   });
