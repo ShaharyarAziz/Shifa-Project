@@ -1,26 +1,23 @@
 import CBD from "./CBD_url.cy";
-import "cypress-file-upload";
-import { upload } from "./Upload_Document.cy";
-import { login } from "./In_Patient_Reservation_Form.cy";
 describe("Main Login", () => {
   beforeEach(() => {
     cy.visit(CBD);
     cy.viewport("macbook-16");
   });
-
-  it("In-Patient Resercation", () => {
+  it("Upload", () => {
     cy.get("#loginForm_email").type("25403");
     cy.get("#loginForm_password").type("Shifa@1234");
     cy.get(".ant-btn").click();
     cy.get(".ant-notification-notice").should("exist");
     cy.wait(4000);
+    //Inpatient Reservation
     //Dropdown
     cy.get('a[href="/form"]').eq(0).click();
     cy.get(".ant-select-selector").click();
     cy.contains("Qamar Hafeez Kiani (General Surgeon)").click();
 
     //MRNO
-    cy.get(".ant-input").type("202014");
+    cy.get(".ant-input").type("202016");
     //New Form
     cy.get(":nth-child(1) > .ant-btn").click();
 
@@ -96,41 +93,5 @@ describe("Main Login", () => {
 
     //Save Button
     cy.get("button.ant-btn span").click();
-    // Upload Document Page
-    // cy.get(`a[href="/upload_docs"]`).click();
-    // // cy.wait(1000)
-    // cy.get(".ant-input").type("202030{enter}");
-    // // cy.wait(1000)
-
-    //   //Admission Type
-    //   cy.get(":nth-child(1) > .ant-radio > .ant-radio-input").click();
-    //   cy.get(".ant-notification-notice").should("exist");
-
-    //   //Document Type
-    //   cy.get("#rc_select_0").click();
-    //   cy.contains("CNIC Card of Patient - Front").click();
-
-    //   // Browse Document
-    //   cy.get("#attachment").selectFile(
-    //     "C:\\Users\\shaharyar.aziz\\Downloads\\Corporate Portal Checklist.pdf"
-    //   );
-    //   cy.get(".ant-btn").click();
-    // });
-    // it("In-Patient Reservation", () => {
-    //   // Login
-    //   cy.get("#loginForm_email").type("11116");
-    //   cy.get("#loginForm_password").type("123");
-    //   cy.get(".ant-btn").click();
-    //   cy.get(".ant-notification-notice").should("exist");
-
-    //   //In-Patient Reservation Page
-    //   cy.get(`a[href="/form"]`).click();
-    //   // cy.wait(5000);
-    //   cy.get(".ant-select-selector").click();
-    //   //Doctor Select
-    //   cy.contains("Qamar Hafeez Kiani (General Surgeon)").click();
-    //MR NO
-    // cy.get(".ant-input").type(202018);
-    // cy.get(":nth-child(1) > .ant-btn").click()
   });
 });
