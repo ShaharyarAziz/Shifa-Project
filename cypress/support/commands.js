@@ -8,19 +8,15 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 //
-// import url from "../e2e/EMR_OPD/url.cy";
-// // -- This is a parent command --
-// // Define a custom Cypress command for login
-// Cypress.Commands.add("login", () => {
-//   describe("Login", () => {
-//     it("Login", () => {
-//       // cy.visit(url);
-//       cy.get("#loginForm_username").type(17378);
-//       cy.get("#loginForm_password").type(123);
-//       cy.get(".ant-btn").click();
-//     });
-//   });
-// });
+// cypress/support/commands.js
+
+Cypress.Commands.add('login', (email, password) => {
+    cy.get("#loginForm_email").type(email);
+    cy.get("#loginForm_password").type(password);
+    cy.get(".ant-btn").click();
+    cy.get(".ant-notification-notice").should("exist");
+  });
+  
 
 // Custom command to check if dropdown is disabled
 
