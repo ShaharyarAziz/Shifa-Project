@@ -16,7 +16,7 @@ describe("Main Login", () => {
     cy.contains("Osama Ishtiaq (Endocrinologist)").click();
 
     //MRNO
-    cy.get(".ant-input").type("202030");
+    cy.get(".ant-input").type("202033");
     //New Form
     cy.get(":nth-child(1) > .ant-btn").click({ force: true });
 
@@ -110,7 +110,7 @@ describe("Main Login", () => {
     cy.get("div.main-div span").click();
 
     cy.wait(1000);
-
+    cy.screenshot();
     // cy.get("div.mr_no_div div").eq(1).click()
     // cy.get('button[type="button"] span').click()
   });
