@@ -27,6 +27,14 @@ Cypress.Commands.add("OPD_login", (email, password) => {
   cy.get(".ant-btn").click();
 });
 
+
+// IPD lOGIN
+Cypress.Commands.add("OPD_login", (email, password) => {
+  cy.get('input[type="text"]').type(email);
+  cy.get('input[type="password"]').type(password);
+  cy.get('button[type="submit"]').click();
+});
+
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
