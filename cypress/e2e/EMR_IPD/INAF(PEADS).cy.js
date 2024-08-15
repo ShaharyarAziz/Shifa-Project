@@ -3,7 +3,7 @@ import IPD from "./IPD_URL.cy";
 describe("Main Login", () => {
   beforeEach(() => {
     cy.visit(IPD);
-    cy.viewport("macbook-11");
+    cy.viewport("macbook-16");
   });
   it("Login", () => {
     cy.login("17378", "123");
@@ -16,24 +16,9 @@ describe("Main Login", () => {
     // cy.get(".ant-btn").click();
     //Patient Select
     cy.wait(2000);
-    cy.get("body").then(($body) => {
-      // If the patient list is visible, click on the patient
-      if (
-        $body.find(
-          '[data-row-key="20274077"] > :nth-child(4) > .ant-row > a > .patient-name-text'
-        ).length > 0
-      ) {
-        cy.get(
-          '[data-row-key="20274077"] > :nth-child(4) > .ant-row > a > .patient-name-text'
-        ).click({ force: true });
-      } else {
-        // If patient list is not visible or the element doesn't exist, throw an error
-        cy.log("Patient list not found or the patient does not exist.");
-        throw new Error(
-          "Patient list not found or the patient does not exist."
-        );
-      }
-    });
+    cy.get(
+      '[data-row-key="22812200"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+    ).click();
     //Nurses
     cy.get('div[role="menuitem"]').eq(1).click();
     //Initial Nursing Assessment form Page
@@ -71,27 +56,20 @@ describe("Main Login", () => {
     cy.get("#presenting_complaint").type("Testing");
     //Patient / Family has been oriented to the following
     cy.get(
-      "#patient_family_has_been_oriented_to_the_following > .ant-row > :nth-child(9) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
+      "#patient_family_has_been_oriented_to_the_following > .ant-row > :nth-child(1) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
     ).click();
     //Patient/ Family are given following Items/ Information on admission:
-    cy.get(".ant-col-16 > .ant-checkbox-wrapper").click();
-    //Baseline Data
-    //Communicable Disease
     cy.get(
-      "#communicable_disease > :nth-child(1) > .ant-col-3 > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
+      '#patient_family_are_given_following_items_information_on_admission > [style="row-gap: 12px;"] > :nth-child(1) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input'
     ).click();
-    //Isolation Type
+    //Baseline Data
     cy.get(
-      "#isolation_type > :nth-child(1) > .ant-col-3 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+      '#patient_family_are_given_following_items_information_on_admission > [style="row-gap: 12px;"] > :nth-child(1) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input'
     ).click();
     //Level of Conscious
     //Oriented To
     cy.get(
       "#level_of_conscious_oriented_to1 > .ant-row > :nth-child(1) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
-    ).click();
-    //Orientation
-    cy.get(
-      "#level_of_conscious_oriented_to2 > .ant-row > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
     ).click();
     //Vision
     cy.get(
@@ -107,7 +85,7 @@ describe("Main Login", () => {
     ).click();
     //Sensory
     cy.get(
-      "#cognition_sensory > :nth-child(1) > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+      "#cognition_speech > :nth-child(1) > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
     ).click();
     //Activity of Daily Living (Self Caring)
     cy.get(
@@ -200,15 +178,11 @@ describe("Main Login", () => {
     ).click({ force: true });
     // cy.wait(2000);
     //Submit
+    cy.get('button[type="submit"] span').first().click({ force: true });
     cy.get(
-      ":nth-child(7) > .ant-modal-root > .ant-modal-wrap > .ant-modal > .ant-modal-content > .ant-modal-body > .ant-form > .ant-row.center_div > .pt-6 > .ant-btn"
-    )
-      .first()
-      .click({ force: true });
-    // cy.get(
-    //   ":nth-child(7) > .ant-modal-root > .ant-modal-wrap > .ant-modal > .ant-modal-content > .ant-modal-body"
-    // ).should("not.exist");
-    // cy.wait(2000);
+      ":nth-child(7) > .ant-modal-root > .ant-modal-wrap > .ant-modal > .ant-modal-content > .ant-modal-body"
+    ).should("not.exist");
+    cy.wait(2000);
 
     //Psychological
     //Mood
@@ -264,35 +238,6 @@ describe("Main Login", () => {
     cy.get(".ant-select-selector").first().click({ force: true });
     cy.contains(
       "Risk for fall related to disease process evidence by use of assistive device"
-    ).click();
-    //DISCHARGE PLANNING (To be initiated at the time of admission)
-    //Will patient require care at home?
-    cy.get(
-      "#will_patient_require_care_at_home > .ant-row > .ant-col-8 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
-    //Will patient require transportation to go home?
-    cy.get(
-      "#require_transportation > .ant-row > .ant-col-8 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
-    //Will patient require physiotherapy to go home?*
-    cy.get(
-      "#require_home_physiotherapy > .ant-row > .ant-col-8 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
-    //Is home oxygen therapy anticipated?*
-    cy.get(
-      "#oxygen_therapy_anticipated > .ant-row > .ant-col-8 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ) .click();
-    //Is home medical equipment anticipated?*
-    cy.get(
-      "#medical_equipment_anticipated > .ant-row > .ant-col-8 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
-    //Who will take care of patient at home?*
-    cy.get(
-      "#who_will_take_care_of_patient_at_home > :nth-child(1) > :nth-child(2) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
-    ).click();
-    //Any other needs anticipated?*
-    cy.get(
-      "#any_other_needs_anticipated > .ant-row > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
     ).click();
     //Save
     cy.get(".ant-col-8 > .ant-btn").click({ force: true });
