@@ -162,7 +162,7 @@ describe("Main Login", () => {
     cy.get(
       "#lines > .ant-row > .ant-col-12 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
     ).click();
-    //Impplants
+    //Implants
     cy.get(
       "#implants > .ant-row > .ant-col-12 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
     ).click();
@@ -281,7 +281,7 @@ describe("Main Login", () => {
     //Is home oxygen therapy anticipated?*
     cy.get(
       "#oxygen_therapy_anticipated > .ant-row > .ant-col-8 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ) .click();
+    ).click();
     //Is home medical equipment anticipated?*
     cy.get(
       "#medical_equipment_anticipated > .ant-row > .ant-col-8 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
