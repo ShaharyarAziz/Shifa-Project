@@ -97,30 +97,37 @@ describe("Main Login", () => {
     cy.get(
       "#level_of_conscious_oriented_to1 > .ant-row > :nth-child(1) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
     ).click();
+    cy.get(
+      "#level_of_conscious_oriented_to1 > .ant-row > :nth-child(2) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
+    ).click();
+    cy.get(
+      "#level_of_conscious_oriented_to1 > .ant-row > .ant-col-6 > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
+    ).click();
+
     //Orientation
     cy.get(
       "#level_of_conscious_oriented_to2 > .ant-row > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).click({ force: true });
     //Vision
     cy.get(
       "#cognition_vision > :nth-child(1) > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).click({ force: true });
     //Hearing
     cy.get(
       "#cognition_hearing > :nth-child(1) > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).click({ force: true });
     //Speech
     cy.get(
       "#cognition_speech > :nth-child(1) > :nth-child(3) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).click({ force: true });
     //Sensory
     cy.get(
       "#cognition_sensory > :nth-child(1) > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).click({ force: true });
     //Risk of Pressure Ulcer
     cy.get(
       "#pressure_ulcer_present_yes_no > .ant-row > .ant-col-12 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).click({ force: true });
     //Pressure Ulcer Assessment
     cy.get("#pressure_ulcer_assessment").click();
     //Sensory Perception

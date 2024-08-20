@@ -6,7 +6,7 @@ describe("Main Login", () => {
     cy.viewport("macbook-11");
   });
   it("Login", () => {
-    cy.login("17378", "123");
+    cy.IPD_login("17378", "123");
 
     cy.get(".ant-select-selector").click();
     cy.contains("D-2").click({ force: true });
@@ -298,3 +298,4 @@ describe("Main Login", () => {
     cy.get(".ant-col-8 > .ant-btn").click({ force: true });
   });
 });
+
