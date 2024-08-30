@@ -1,4 +1,4 @@
-import IPD from "./IPD_URL.cy";
+import IPD from "../IPD_URL.cy";
 
 describe("Main Login", () => {
   beforeEach(() => {
@@ -46,7 +46,7 @@ describe("Main Login", () => {
     ).click({ force: true });
     //Patient Personal Belongings Dialog bog open
     cy.get(
-      '[d="M880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32zm-622.3-84c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 000-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 009.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89z"]'
+      '[style="margin-left: 8px; order: 2;"] > .anticon-edit > svg > [d="M880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32zm-622.3-84c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 000-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 009.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89z"]'
     ).click({ force: true });
     //Patient / family informed about hospital's "Patient Valueables" policy*
     cy.get(
@@ -342,30 +342,30 @@ describe("Main Login", () => {
       "#level_of_conscious_oriented_to > .ant-row > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
     ).click();
     // Alert
-    cy.get(
-      "#level_of_conscious_oriented_to > .ant-row > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    // cy.get(
+    //   "#level_of_conscious_oriented_to > .ant-row > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    // ).click();
     // Lethargic
-    cy.get(
-      "#level_of_conscious_oriented_to > .ant-row > :nth-child(3) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    // cy.get(
+    //   "#level_of_conscious_oriented_to > .ant-row > :nth-child(3) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    // ).click();
     //Tone
     // Normal
     cy.get(
       '#cognition_tone > [style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"] > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input'
     ).click();
     // Hypertonic
-    cy.get(
-      '#cognition_tone > [style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"] > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input'
-    ).click();
+    // cy.get(
+    //   '#cognition_tone > [style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"] > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input'
+    // ).click();
     // Hypotonic
-    cy.get(
-      '#cognition_tone > [style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"] > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input'
-    ).click();
+    // cy.get(
+    //   '#cognition_tone > [style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"] > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input'
+    // ).click();
     //Hypertonic
-    cy.get(
-      '#cognition_tone > [style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"] > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input'
-    ).click();
+    // cy.get(
+    //   '#cognition_tone > [style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"] > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input'
+    // ).click();
     // Irritable
     cy.get(
       '[style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"] > :nth-child(4) > .ant-radio-wrapper > .ant-radio > .ant-radio-input'
@@ -480,8 +480,14 @@ describe("Main Login", () => {
     cy.get("input#drains_pleural_site").click({ force: true });
     cy.get('div[title=" Right "] div').click({ force: true });
     //DOI
-    cy.get("input#drains_pleural_doi").click({ force: true });
-   cy.contains('td', '11').closest('tr').find('td').find('div').eq(3)
-      .click({ force: true });
+    cy.get("#drains_pleural_doi", { timeout: 10000 }).click();
+    // cy.wait(1000);
+    cy.get("td.ant-picker-cell-selected div").click({ force: true });
+
+    //Abdominal
+    cy.get("#abdominal").click();
+    //Site
+    cy.get("div.ant-select-open div").click({ force: true });
+    cy.get('div[title=" Left "] div').click({ force: true });
   });
 });

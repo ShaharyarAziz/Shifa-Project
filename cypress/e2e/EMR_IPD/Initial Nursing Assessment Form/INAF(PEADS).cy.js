@@ -1,12 +1,12 @@
-import IPD from "./IPD_URL.cy";
+import IPD from "../IPD_URL.cy";
 
 describe("Main Login", () => {
   beforeEach(() => {
     cy.visit(IPD);
-    cy.viewport("macbook-11");
+    cy.viewport("macbook-16");
   });
   it("Login", () => {
-    cy.IPD_login("17378", "123");
+    cy.login("17378", "123");
 
     cy.get(".ant-select-selector").click();
     cy.contains("D-2").click({ force: true });
@@ -16,29 +16,13 @@ describe("Main Login", () => {
     // cy.get(".ant-btn").click();
     //Patient Select
     cy.wait(2000);
-    cy.get("body").then(($body) => {
-      // If the patient list is visible, click on the patient
-      if (
-        $body.find(
-          '[data-row-key="20274077"] > :nth-child(4) > .ant-row > a > .patient-name-text'
-        ).length > 0
-      ) {
-        cy.get(
-          '[data-row-key="20274077"] > :nth-child(4) > .ant-row > a > .patient-name-text'
-        ).click({ force: true });
-      } else {
-        // If patient list is not visible or the element doesn't exist, throw an error
-        cy.log("Patient list not found or the patient does not exist.");
-        throw new Error(
-          "Patient list not found or the patient does not exist."
-        );
-      }
-    });
-    //Nurses
-    cy.get('div[role="menuitem"]').eq(1).click();
-    //Initial Nursing Assessment form Page
-    cy.get('a[href="/shifa/admission/adult"]').click();
-    //Nursing Assessment Form
+    cy.get(
+      '[data-row-key="22812200"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+    ).click();
+    //Intial Nursing Assessment Page Navigation
+    cy.get(":nth-child(6) > .ant-menu-submenu-title").click();
+    cy.contains("span", "Initial Nursing Assessment (Peads)").click();
+    cy.wait(2000);
     //Mode Of Admission
     cy.get(
       "#mode_of_admission > .ant-row > .ant-col-14 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
@@ -84,43 +68,69 @@ describe("Main Login", () => {
     cy.get(
       "#isolation_type > :nth-child(1) > .ant-col-3 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
     ).click();
+    //Immunization
+    cy.get(
+      "#immunization > .ant-row > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //Functional Assessment
+    //Feeding
+    cy.get(
+      "#functional_assessment_feeding > :nth-child(1) > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //Bathing
+    cy.get(
+      "#functional_assessment_bathing > :nth-child(1) > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //Elimination
+    cy.get(
+      "#functional_assessment_elimination > :nth-child(1) > :nth-child(3) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //Mobility
+    cy.get(
+      "#functional_assessment_mobility > :nth-child(1) > .ant-col-2 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //Mobility Comment
+    cy.get("#mobility_comments").type("Testing Mobility Comment");
+    //Cognition / Perception Pattern
     //Level of Conscious
     //Oriented To
+    //Time
     cy.get(
       "#level_of_conscious_oriented_to1 > .ant-row > :nth-child(1) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
     ).click();
+    //Place
+    cy.get(
+      "#level_of_conscious_oriented_to1 > .ant-row > :nth-child(2) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
+    ).click();
+    //Person
+    cy.get(
+      "#level_of_conscious_oriented_to1 > .ant-row > .ant-col-6 > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
+    ).click();
+
     //Orientation
     cy.get(
       "#level_of_conscious_oriented_to2 > .ant-row > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).should("be.disabled");
     //Vision
     cy.get(
       "#cognition_vision > :nth-child(1) > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).click({ force: true });
     //Hearing
     cy.get(
       "#cognition_hearing > :nth-child(1) > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).click({ force: true });
     //Speech
     cy.get(
       "#cognition_speech > :nth-child(1) > :nth-child(3) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).click({ force: true });
     //Sensory
     cy.get(
       "#cognition_sensory > :nth-child(1) > :nth-child(1) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
-    //Activity of Daily Living (Self Caring)
-    cy.get(
-      "#no_problems_identified_self_caring > .ant-row > .ant-col-14 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
-    //Activity of Daily Living (Musculoskeletal)
-    cy.get(
-      "#no_problems_identified_musculoskeletal > .ant-col > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).click({ force: true });
     //Risk of Pressure Ulcer
     cy.get(
       "#pressure_ulcer_present_yes_no > .ant-row > .ant-col-12 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
-    ).click();
+    ).click({ force: true });
     //Pressure Ulcer Assessment
     cy.get("#pressure_ulcer_assessment").click();
     //Sensory Perception
@@ -149,7 +159,6 @@ describe("Main Login", () => {
     ).click({ force: true });
     //Submit
     cy.get(".pt-6 > .ant-btn").click();
-
     //Drains
     cy.get(
       "#drains > .ant-row > .ant-col-12 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
@@ -166,21 +175,21 @@ describe("Main Login", () => {
     cy.get(
       "#implants > .ant-row > .ant-col-12 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
     ).click();
-    //Activity of Daily Living ( Use of Assisting Equipment )
+    //Growth & Development
     cy.get(
-      '#_use_of_assisting_equipment > [style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"] > :nth-child(2) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner'
-    ).click({ force: true });
-    //Nutrition Screening
+      "#growth_and_development_are_normal_as_per_growth_chart > .ant-row > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //Physician to be notified for relevant referral
+    cy.get("#physician_referral_peads").click();
+    //Nutrition Assessment
     cy.get("#nutrition_assessment").click({ force: true });
-    //nform to duty doctor for relevant referral
-    cy.get("#inform_to_duty_doctor_rel_ref").click({ force: true });
-    //History of hospitalization in past 2 months?
+    //History of hospitalization in past 2 months? *
     cy.get(
-      "#hospitalization > .ant-row > .g-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
+      "#hospitalization > .ant-row > .y-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
     ).click({ force: true });
-    //History of weight Loss/ Gain in past 2 months
+    //History of weight Loss/ Gain in past 2 months *
     cy.get(
-      "#weight_loss > .ant-row > .y-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
+      "#weight_loss > .ant-row > .g-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
     ).click({ force: true });
     //Vomiting
     cy.get(
@@ -188,28 +197,24 @@ describe("Main Login", () => {
     ).click({ force: true });
     //Diarrhea
     cy.get(
-      "#diarrhea > .ant-row > .y-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
+      "#diarrhea > .ant-row > .g-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
     ).click({ force: true });
-    //Loss of appetite
+    //Loss of appetite *
     cy.get(
       "#loss_appetite > .ant-row > .g-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
     ).click({ force: true });
-    //Hemoglobin 10g/dl (Yes = 02 score)
+    //Hemoglobin 10g/dl (Yes = 02 score) *
     cy.get(
-      "#hemoglobin > .ant-row > .g-bg > .ant-radio-wrapper > .ant-radio"
+      "#hemoglobin > .ant-row > .r-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
     ).click({ force: true });
-    // cy.wait(2000);
     //Submit
     cy.get(
       ":nth-child(7) > .ant-modal-root > .ant-modal-wrap > .ant-modal > .ant-modal-content > .ant-modal-body > .ant-form > .ant-row.center_div > .pt-6 > .ant-btn"
-    )
-      .first()
-      .click({ force: true });
-    // cy.get(
-    //   ":nth-child(7) > .ant-modal-root > .ant-modal-wrap > .ant-modal > .ant-modal-content > .ant-modal-body"
-    // ).should("not.exist");
-    // cy.wait(2000);
-
+    ).click({ force: true });
+    //Feeding
+    cy.get(
+      "#nutrition_screening_feeding > .ant-row > :nth-child(2) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
+    ).click();
     //Psychological
     //Mood
     cy.get(
@@ -247,7 +252,6 @@ describe("Main Login", () => {
       .first()
       .scrollIntoView()
       .type("For testing Purpose", { force: true });
-
     //Religious / Cultural / Spiritual
     //Religion
     cy.get(
@@ -294,8 +298,11 @@ describe("Main Login", () => {
     cy.get(
       "#any_other_needs_anticipated > .ant-row > :nth-child(2) > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
     ).click();
+    //Following information / Education has been imparted on the basis of anticipated discharge needs*
+    cy.get(
+      "#following_information_education_has_been_imparted_on_the_basis_of_anticipated_discharge_needs > .ant-row > :nth-child(2) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
+    ).click();
     //Save
     cy.get(".ant-col-8 > .ant-btn").click({ force: true });
   });
 });
-

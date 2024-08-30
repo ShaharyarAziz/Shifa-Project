@@ -3,7 +3,7 @@ import IPD from "./IPD_URL.cy";
 describe("Main Login", () => {
   beforeEach(() => {
     cy.visit(IPD);
-    cy.viewport("macbook-11");
+    cy.viewport("macbook-16");
   });
   it("Login", () => {
     cy.login("17378", "123");
@@ -20,11 +20,11 @@ describe("Main Login", () => {
       // If the patient list is visible, click on the patient
       if (
         $body.find(
-          '[data-row-key="21371453"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="20817205"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).length > 0
       ) {
         cy.get(
-          '[data-row-key="21371453"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="20817205"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).click({ force: true });
       } else {
         // If patient list is not visible or the element doesn't exist, throw an error
@@ -45,11 +45,11 @@ describe("Main Login", () => {
       cy.get("#consciousness").click({ force: true });
       //Isolation Required
       //Contact Precaution
-      cy.get(".ant-row > :nth-child(1) > .ant-radio").click({ force: true });
+    //   cy.get(".ant-row > :nth-child(1) > .ant-radio").click({ force: true });
       //Airborne Precautions
-      cy.get(".ant-row > :nth-child(2) > .ant-radio > .ant-radio-input").click({
-        force: true,
-      });
+    //   cy.get(".ant-row > :nth-child(2) > .ant-radio > .ant-radio-input").click({
+    //     force: true,
+    //   });
       //NA
       cy.get(":nth-child(3) > .ant-radio > .ant-radio-input").click({
         force: true,
@@ -70,15 +70,15 @@ describe("Main Login", () => {
       ).click({ force: true });
 
       //Temperature
-      cy.get('input[type="NUMBER"]').eq(0).type(100);
+      cy.get('input[type="NUMBER"]').eq(0).type(96);
       //blood pressureBP S (mm/Hg)
-      cy.get('input[type="NUMBER"]').eq(1).type(130);
+      cy.get('input[type="NUMBER"]').eq(1).type(150);
       //blood pressureBP D (mm/Hg)
-      cy.get('input[type="NUMBER"]').eq(2).type(130);
+      cy.get('input[type="NUMBER"]').eq(2).type(120);
       //   RRRR (Per Min)
-      cy.get('input[type="NUMBER"]').eq(3).type(20);
+      cy.get('input[type="NUMBER"]').eq(3).type(25);
       // pulsePulse (Per Min)
-      cy.get('input[type="NUMBER"]').eq(4).type(130);
+      cy.get('input[type="NUMBER"]').eq(4).type(112);
       // Spo2SpO2 (%)
       cy.get('input[autocomplete="off"]').eq(5).type(100);
       // weightWeight (Kg)
