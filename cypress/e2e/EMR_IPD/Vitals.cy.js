@@ -7,24 +7,23 @@ describe("Main Login", () => {
   });
   it("Login", () => {
     cy.login("17378", "123");
-
     cy.get(".ant-select-selector").click();
-    cy.contains("D-2").click({ force: true });
+
+    cy.contains("C-3").click({ force: true });
+
     // cy.contains('span', 'Location change successfully')
-    //lOGIN Password
-    // cy.get("#loginForm_password").type(123);
-    // cy.get(".ant-btn").click();
+   
     //Patient Select
     cy.wait(3000);
     cy.get("body").then(($body) => {
       // If the patient list is visible, click on the patient
       if (
         $body.find(
-          '[data-row-key="20817205"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="22026766"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).length > 0
       ) {
         cy.get(
-          '[data-row-key="20817205"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="22026766"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).click({ force: true });
       } else {
         // If patient list is not visible or the element doesn't exist, throw an error
@@ -34,8 +33,8 @@ describe("Main Login", () => {
         );
       }
       //Vitals Page
-      cy.get('a[href="/shifa/vital"]').click();
-
+      // cy.get('a[href="/shifa/vital"]').click();
+      cy.get('li[role="menuitem"]').eq(2).click()
       //Vitals Options
       //Unable to stand
       cy.get(
@@ -45,11 +44,11 @@ describe("Main Login", () => {
       cy.get("#consciousness").click({ force: true });
       //Isolation Required
       //Contact Precaution
-    //   cy.get(".ant-row > :nth-child(1) > .ant-radio").click({ force: true });
+      //   cy.get(".ant-row > :nth-child(1) > .ant-radio").click({ force: true });
       //Airborne Precautions
-    //   cy.get(".ant-row > :nth-child(2) > .ant-radio > .ant-radio-input").click({
-    //     force: true,
-    //   });
+      //   cy.get(".ant-row > :nth-child(2) > .ant-radio > .ant-radio-input").click({
+      //     force: true,
+      //   });
       //NA
       cy.get(":nth-child(3) > .ant-radio > .ant-radio-input").click({
         force: true,
@@ -152,7 +151,9 @@ describe("Main Login", () => {
       //Save
       cy.get(".save-button > .ant-btn").click();
       //Success Toast Message
-      cy.get('div[role="alert"] div').eq(3).should("have.text","Admission order successfully saved")
+      cy.get('div[role="alert"] div')
+        .eq(3)
+        .should("have.text", "Admission order successfully saved");
 
       //   cy.get('input[type="NUMBER"]').eq(1).type(130);
       // FallsFall Assessment

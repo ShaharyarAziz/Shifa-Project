@@ -27,7 +27,6 @@ Cypress.Commands.add("OPD_login", (email, password) => {
   cy.get(".ant-btn").click();
 });
 
-
 // IPD lOGIN
 Cypress.Commands.add("IPD_login", (email, password) => {
   cy.get('input[type="text"]').type(email);
@@ -35,7 +34,21 @@ Cypress.Commands.add("IPD_login", (email, password) => {
   cy.get('button[type="submit"]').click();
 });
 
-//
+// ----------------------------Career Portal Login------------------------------------
+Cypress.Commands.add("CareerPortal_login", (email, password) => {
+  cy.get('input[name="user_name"]').type(email);
+  cy.get('input[name="user_password"]').type(password);
+  cy.get('button[type="submit"]').click();
+});
+// -----------------------------Corporate Patient Portal------------------------------
+Cypress.Commands.add("CorporatePortal_login", (user_name, password) => {
+  cy.get('#loginForm_username').type(user_name);
+  cy.get('#loginForm_password').type(password);
+  cy.get('.ant-btn').click();
+});
+
+
+
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
