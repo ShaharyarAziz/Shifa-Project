@@ -1,3 +1,3 @@
-const IPD = "https://devemripdnew.shifa.com.pk/shifa";
+const IPD = "https://devemripdnew.shifa.com.pk/";
 
 export default IPD;

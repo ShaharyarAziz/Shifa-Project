@@ -9,7 +9,7 @@ describe("Main Login", () => {
     cy.login("17378", "123");
 
     cy.get(".ant-select-selector").click();
-    cy.contains("D-2").click({ force: true });
+    cy.contains("D-2").should("be.visible").click({ force: true });
     // cy.contains('span', 'Location change successfully')
     //lOGIN Password
     // cy.get("#loginForm_password").type(123);

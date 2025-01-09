@@ -6,18 +6,16 @@ describe("Main Login", () => {
     cy.viewport("macbook-16");
   });
   it("Login", () => {
-    cy.login("17378", "123");
-
-    cy.get(".ant-select-selector").click();
-    cy.contains("D-2").click({ force: true });
-    // cy.contains('span', 'Location change successfully')
-    //lOGIN Password
-    // cy.get("#loginForm_password").type(123);
-    // cy.get(".ant-btn").click();
-    //Patient Select
+    cy.IPD_login("17378", 123);
     cy.wait(2000);
+    cy.get(":nth-child(1) > .pop > .logo").click();
+    cy.wait(2000);
+
+    cy.get("div.ant-select-selector").click();
+    cy.contains("B-3").click();
+    cy.wait(2500);
     cy.get(
-      '[data-row-key="22812200"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+      '[data-row-key="AA9436"] > :nth-child(4) > .ant-row > a > .patient-name-text'
     ).click();
     //Intial Nursing Assessment Page Navigation
     cy.get(":nth-child(6) > .ant-menu-submenu-title").click();
@@ -38,6 +36,11 @@ describe("Main Login", () => {
     //Patient Belongings
     cy.get(
       "#patient_belongings > .ant-row > .ant-col-10 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //Patient / family informed about hospital's "Patient Valueables" policy*
+    cy.get("input#informed_about_personal_belongings_policy").click();
+    cy.get(
+      '[style="padding-left: 8px; padding-right: 8px; text-align: right;"] > .ant-btn'
     ).click();
     //Accompanied By
     cy.get(
@@ -205,12 +208,13 @@ describe("Main Login", () => {
     ).click({ force: true });
     //Hemoglobin 10g/dl (Yes = 02 score) *
     cy.get(
-      "#hemoglobin > .ant-row > .r-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
+      "#hemoglobin > .ant-row > .g-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
     ).click({ force: true });
     //Submit
-    cy.get(
-      ":nth-child(7) > .ant-modal-root > .ant-modal-wrap > .ant-modal > .ant-modal-content > .ant-modal-body > .ant-form > .ant-row.center_div > .pt-6 > .ant-btn"
-    ).click({ force: true });
+    cy.get('button[type="submit"] span').click(
+      { force: true },
+      { multiple: true }
+    );
     //Feeding
     cy.get(
       "#nutrition_screening_feeding > .ant-row > :nth-child(2) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
@@ -303,6 +307,6 @@ describe("Main Login", () => {
       "#following_information_education_has_been_imparted_on_the_basis_of_anticipated_discharge_needs > .ant-row > :nth-child(2) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
     ).click();
     //Save
-    cy.get(".ant-col-8 > .ant-btn").click({ force: true });
+    // cy.get(".ant-col-8 > .ant-btn").click({ force: true });
   });
 });

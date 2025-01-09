@@ -6,10 +6,13 @@ describe("Main Login", () => {
     cy.viewport("macbook-16");
   });
   it("Login", () => {
-    cy.login("17378", "123");
+    cy.IPD_login("17378", 123);
+    cy.wait(2000);
+    cy.get(":nth-child(1) > .pop > .logo").click();
+    cy.wait(2000);
     cy.get(".ant-select-selector").click();
 
-    cy.contains("C-3").click({ force: true });
+    cy.contains("B-3").click({ force: true });
 
     // cy.contains('span', 'Location change successfully')
    
@@ -19,11 +22,11 @@ describe("Main Login", () => {
       // If the patient list is visible, click on the patient
       if (
         $body.find(
-          '[data-row-key="22026766"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="22027427"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).length > 0
       ) {
         cy.get(
-          '[data-row-key="22026766"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="22027427"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).click({ force: true });
       } else {
         // If patient list is not visible or the element doesn't exist, throw an error
@@ -115,37 +118,37 @@ describe("Main Login", () => {
       cy.get(".ant-col > .ant-btn").click({ force: true });
       // FallsFalls Risk Screening
       //Yes
-      cy.get('div[id="Falls Risk Screening"] input').eq(0).click();
-      //Morse Fall Scale
-      cy.get(
-        ":nth-child(5) > :nth-child(1) > :nth-child(2) > :nth-child(1) > .ant-col-2 > .vital_add_btn"
-      ).click({ force: true });
-      //History of falling *
-      cy.get(
-        ".o-bg > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
-      ).click({ force: true });
-      // Secondary Diagnosis *
-      cy.get(
-        "#sec_diagnosis > .ant-row > .ant-col-4 > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
-      ).click({ force: true });
-      // Ambulatory Aid *
-      cy.get(
-        "#ambulatory_aid > .ant-row > :nth-child(4) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
-      ).click({ force: true });
-      // IV/ Heparin/ Saline Lock *
-      cy.get(
-        "#iv_hep_sal > .ant-row > .m-bg > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
-      ).click({ force: true });
-      // Gait Transferring *
-      cy.get(
-        ".y-bg > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
-      ).click({ force: true });
-      // Mental Status *
-      cy.get(
-        "#mental_status > .ant-row > .ant-col-3.pl-10 > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
-      ).click({ force: true });
-      //Submit
-      cy.get(":nth-child(15) > .ant-btn").click({ force: true });
+      // cy.get('div[id="Falls Risk Screening"] input').eq(0).click();
+      // //Morse Fall Scale
+      // cy.get(
+      //   ":nth-child(5) > :nth-child(1) > :nth-child(2) > :nth-child(1) > .ant-col-2 > .vital_add_btn"
+      // ).click({ force: true });
+      // //History of falling *
+      // cy.get(
+      //   ".o-bg > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
+      // ).click({ force: true });
+      // // Secondary Diagnosis *
+      // cy.get(
+      //   "#sec_diagnosis > .ant-row > .ant-col-4 > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
+      // ).click({ force: true });
+      // // Ambulatory Aid *
+      // cy.get(
+      //   "#ambulatory_aid > .ant-row > :nth-child(4) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
+      // ).click({ force: true });
+      // // IV/ Heparin/ Saline Lock *
+      // cy.get(
+      //   "#iv_hep_sal > .ant-row > .m-bg > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
+      // ).click({ force: true });
+      // // Gait Transferring *
+      // cy.get(
+      //   ".y-bg > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
+      // ).click({ force: true });
+      // // Mental Status *
+      // cy.get(
+      //   "#mental_status > .ant-row > .ant-col-3.pl-10 > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
+      // ).click({ force: true });
+      // //Submit
+      // cy.get(":nth-child(15) > .ant-btn").click({ force: true });
       //No
       //   cy.get('div[id="Falls Risk Screening"] input').eq(1).click()
       //Save

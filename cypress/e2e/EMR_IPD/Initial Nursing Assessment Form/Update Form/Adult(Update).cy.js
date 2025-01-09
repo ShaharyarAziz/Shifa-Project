@@ -9,8 +9,7 @@ describe("Main Login", () => {
     cy.IPD_login("17378", "123");
 
     cy.get(".ant-select-selector").click();
-    cy.contains("D-2").click({ force: true });
-    // cy.contains('span', 'Location change successfully')
+    cy.contains("C-3").click({ force: true });    // cy.contains('span', 'Location change successfully')
     //lOGIN Password
     // cy.get("#loginForm_password").type(123);
     // cy.get(".ant-btn").click();
@@ -20,11 +19,11 @@ describe("Main Login", () => {
       // If the patient list is visible, click on the patient
       if (
         $body.find(
-          '[data-row-key="20274077"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="AE0734"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).length > 0
       ) {
         cy.get(
-          '[data-row-key="20274077"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="AE0734"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).click({ force: true });
       } else {
         // If patient list is not visible or the element doesn't exist, throw an error

@@ -3,13 +3,17 @@ import IPD from "../IPD_URL.cy";
 describe("Main Login", () => {
   beforeEach(() => {
     cy.visit(IPD);
-    cy.viewport("macbook-11");
+    cy.viewport("macbook-16");
   });
   it("Login", () => {
-    cy.login("17378", "123");
+    cy.IPD_login("17378", 123);
+    cy.wait(2000);
+    cy.get(":nth-child(1) > .pop > .logo").click();
+    cy.wait(2000);
 
-    cy.get(".ant-select-selector").click();
-    cy.contains("D-2").click({ force: true });
+    cy.get("div.ant-select-selector").click();
+    cy.contains("B-3").click();
+    // cy.contains("D-2").click({ force: true });
     // cy.contains('span', 'Location change successfully')
     //lOGIN Password
     // cy.get("#loginForm_password").type(123);
@@ -20,11 +24,11 @@ describe("Main Login", () => {
       // If the patient list is visible, click on the patient
       if (
         $body.find(
-          '[data-row-key="20817205"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="22027427"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).length > 0
       ) {
         cy.get(
-          '[data-row-key="20817205"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="22027427"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).click({ force: true });
       } else {
         // If patient list is not visible or the element doesn't exist, throw an error
@@ -37,7 +41,7 @@ describe("Main Login", () => {
     //Nurses
     cy.get('div[role="menuitem"]').eq(1).click();
     //Initial Nursing Assessment form Page
-    cy.get('a[href="/shifa/admission/neonates"]').click();
+    cy.get("li.ant-menu-item-only-child span").eq(0).click();
 
     //Patient Belongings
     //Yes
@@ -54,10 +58,11 @@ describe("Main Login", () => {
     ).click({ force: true });
     //Handed Over To
     cy.get(
-      '[style="margin-left: -4px; margin-right: -4px; row-gap: 0px;"] > :nth-child(1) > .ant-row > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector'
+      '[style="margin-left: -4px; margin-right: -4px; row-gap: 0px;"] > .ant-col-12 > .ant-row > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector'
     ).click();
     //Dropdown
-    cy.contains("Father").click({ force: true });
+    // cy.contains("Staff").click({ force: true });
+    cy.get('div[title="Staff"] div').click();
     //Name
     cy.get("#handed_over_to_name").type("Testing");
     //Submit
@@ -171,22 +176,37 @@ describe("Main Login", () => {
     //Type
     cy.get("#isolation_type_text").type("Testing");
 
-    //Gestational Age*
-    cy.get("#gestational_age").type("783", {
-      force: true,
-    });
+    // //Gestational Age*
+    // cy.get("#gestational_age").type("783", {
+    //   force: true,
+    // });
     //Current Weight*
-    cy.get("#weight_in_grams").type(90);
-    // Gestational Age*
+    // cy.get("#weight_in_grams").type(75);
+    //Current Weight Percentile*
+    cy.get("#rc_select_1").click();
+    cy.get("#rc_select_1").type("<50{enter}");
 
-    cy.get("#gestational_age").type(90, { force: true });
-    //Height
-    cy.get("#birth_height").type("6734", { force: true });
-    //APGAR Score *
-    cy.get("#apgar_score").type(321, { force: true });
+    // cy.get("span.ant-select-selection-item").eq(0).click();
+    cy.get("#rc_select_3").click();
+
+    // //Height
+    // cy.get("#birth_height").type("67", { force: true });
+    //Height Percentile
+    cy.get("#rc_select_2").click();
+    cy.get("#rc_select_2").type("<3{enter}");
     //H - Circumference*
-    cy.get("#head_circumference").type(763, { force: true });
+    cy.get("#head_circumference").type(76, { force: true });
+    //H - Circumference Percentile*
+    cy.get("#rc_select_3").click();
+    cy.get("#rc_select_3").type("<97{enter}");
 
+    // Gestational Age Weeks*
+    cy.get("#gestational_age").type("2", { force: true });
+    //Gestational Age days
+    cy.get("#gestational_age_days").type("2");
+
+    //APGAR Score *
+    cy.get("#apgar_score").type("3");
     //Patient / Family has been oriented to the following *
     //Hospital Valuable Policy
     cy.get(
@@ -334,7 +354,9 @@ describe("Main Login", () => {
     cy.get(
       '[style="padding: 20px 0px 0px 10px; row-gap: 0px;"] > .ant-col > .ant-btn'
     ).click({ force: true });
-    cy.get(".total_span").should("have.text", "Total Score = 1");
+    cy.get(
+      ":nth-child(5) > .ant-card > .ant-card-body > :nth-child(1) > .ant-col > .pain_span"
+    ).should("have.text", "Total Score :1");
 
     //Level of Conscious*
     // Unresponsive
@@ -369,7 +391,7 @@ describe("Main Login", () => {
     // Irritable
     cy.get(
       '[style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"] > :nth-child(4) > .ant-radio-wrapper > .ant-radio > .ant-radio-input'
-    ).click();
+    ).click({ multiple: true });
 
     // Other
     cy.get(
@@ -419,7 +441,7 @@ describe("Main Login", () => {
     //type
     cy.get("#formula_supplement_comment_peads").type("testing");
     //Growth Chart Percentile for Height
-    cy.get("#percentile_for_height").type(90);
+    // cy.get("#percentile_for_height").type(90);
 
     //NEONATAL SKIN RISK ASSESSMENT (NSRA) TOOL
     cy.get("#nsra_assessment").click();
@@ -470,24 +492,115 @@ describe("Main Login", () => {
     // cy.get('#umbilical_stump_inorm_to_doctor').type("testing")
 
     //Drains
+    //No
+    cy.get('div[id="drains"] input').eq(1).click();
+    // cy.get(
+    //   "#drains > .ant-row > .ant-col-3 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    // ).click();
+    // //Chest
+    // cy.get("#pleural").click();
+    // //Site
+    // cy.get("input#drains_pleural_site").click({ force: true });
+    // cy.get('div[title=" Right "] div').click({ force: true });
+    // //DOI
+    // cy.get("div.ant-picker-input").eq(2).click();
+    // // cy.get('a[aria-disabled="false"]').eq(0).click({ force: true });
+    // cy.get("input#drains_pleural_doi").type("01-03-2025");
+    // // cy.wait(1000);
+    // // cy.get("td.ant-picker-cell-selected div").click({ force: true });
+
+    // //Abdominal
+    // cy.get("#abdominal").click();
+    // //Site
+    // cy.get(
+    //   ":nth-child(7) > :nth-child(1) > .ant-col-17 > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector"
+    // ).click({ force: true });
+    // // cy.contains("Right").click();
+    // cy.get('div[title=" Right "] div').eq(1).click({ multiple: true });
+    // //DOI
+    // cy.get(
+    //   ":nth-child(5) > :nth-child(1) > .ant-col-20 > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-picker > .ant-picker-input"
+    // ).click({ multiple: true });
+    // cy.get("input#drains_abdominal_doi").type("01-03-2025");
+
+    //Invasive Lines
+    //No
+    cy.get('div[id="invasive"] input').eq(1).click();
+
+    //Highlight Nutritional Risk: Children 0 - 2 years
+    //No Risk
+    cy.get(
+      "#highlight_nutritional_risk_children_0_2_years > .ant-row > :nth-child(1) > .ant-checkbox-wrapper"
+    ).click();
+    //Special Formula Feed
+    cy.get(
+      "#highlight_nutritional_risk_children_0_2_years > .ant-row > :nth-child(2) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
+    ).click();
+    //List Problems
+    cy.get(
+      ".ant-col-24 > .ant-row > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector"
+    ).click();
+    //Item selection from dropdown
+    cy.get(
+      'div[title="Risk for infection  related to deficient immunological defenses."] div'
+    ).click();
+
+    //DISCHARGE PLANNING (To be initiated at the time of admission)
+    //Who will take care of patient at home?*
+    //Family Member
+    cy.get(
+      "#who_will_take_care_of_patient_at_home > :nth-child(1) > :nth-child(1) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
+    ).click();
+    //Will patient require transportation to go home?*
+    //No
+    cy.get(
+      "#require_transportation > .ant-row > .ant-col-8 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //Will patient require physiotherapy to go home?*
     //Yes
     cy.get(
-      "#drains > .ant-row > .ant-col-3 > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
+      "#require_home_physiotherapy > .ant-row > .ant-col-9 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
     ).click({ force: true });
-    //Chest
-    cy.get("#pleural").click();
-    //Site
-    cy.get("input#drains_pleural_site").click({ force: true });
-    cy.get('div[title=" Right "] div').click({ force: true });
-    //DOI
-    cy.get("#drains_pleural_doi", { timeout: 10000 }).click();
-    // cy.wait(1000);
-    cy.get("td.ant-picker-cell-selected div").click({ force: true });
+    //If yes, please refer to home Physiotherapy
+    cy.get(
+      ":nth-child(7) > :nth-child(1) > .ant-col-16 > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-inner"
+    ).click({ force: true });
+    //Is home medical equipment anticipated?*
+    //No
+    cy.get(
+      "#medical_equipment_anticipated > .ant-row > .ant-col-8 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //Is home oxygen therapy anticipated?*
+    //No
+    cy.get(
+      "#oxygen_therapy_anticipated > .ant-row > .ant-col-8 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //Any other needs anticipated?*
+    //Yes
+    cy.get(
+      "#any_other_needs_anticipated > .ant-row > .ant-col-9 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //If,yes please specify
+    cy.get("#any_other_needs_anticipated_text").type(
+      "Patient is not feeling well......"
+    );
+    //Education has been imparted on the basis of anticipated discharge needs*
+    //Feeding
+    cy.get("#any_other_needs_anticipated_text").click();
+    //Never Leave baby unattended
+    cy.get(
+      "#following_information_education_has_been_imparted_on_the_basis_of_anticipated_discharge_needs > .ant-row > :nth-child(7) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
+    ).click();
+    //Hearing Screening?*
+    //No
+    cy.get(
+      "#hearing_screening > .ant-row > .ant-col-8 > .ant-radio-wrapper > .ant-radio > .ant-radio-input"
+    ).click();
+    //If No, Please specify
+    cy.get("#hearing_screening_justification").type("Baby is crying");
 
-    //Abdominal
-    cy.get("#abdominal").click();
-    //Site
-    cy.get("div.ant-select-open div").click({ force: true });
-    cy.get('div[title=" Left "] div').click({ force: true });
+    //Save Form
+    cy.get(".align_center > .ant-btn").should("be.visible");
+    cy.get(".align_center > .ant-btn").click();
   });
 });
