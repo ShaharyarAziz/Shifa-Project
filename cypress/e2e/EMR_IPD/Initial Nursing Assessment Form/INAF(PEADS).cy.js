@@ -9,10 +9,10 @@ describe("Main Login", () => {
     cy.IPD_login("17378", 123);
     cy.wait(2000);
     cy.get(":nth-child(1) > .pop > .logo").click();
-    cy.wait(2000);
+    cy.wait(3500);
 
-    cy.get("div.ant-select-selector").click();
-    cy.contains("B-3").click();
+    cy.get("div.ant-select-selector").click({ multiple: true });
+    cy.contains("B-3").click({ force: true });
     cy.wait(2500);
     cy.get(
       '[data-row-key="AA9436"] > :nth-child(4) > .ant-row > a > .patient-name-text'
@@ -46,6 +46,8 @@ describe("Main Login", () => {
     cy.get(
       '#accompanied_by > [style="margin-left: -4px; margin-right: -4px; row-gap: 8px;"] > :nth-child(1) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input'
     ).click();
+    //Nurse
+    cy.get('.ant-col-2.mr-3 > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click();
     //Employee ID
     cy.get("#arrival_information_user_id").type("29920{enter}");
     //Arrival Date
@@ -207,14 +209,12 @@ describe("Main Login", () => {
       "#loss_appetite > .ant-row > .g-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
     ).click({ force: true });
     //Hemoglobin 10g/dl (Yes = 02 score) *
-    cy.get(
-      "#hemoglobin > .ant-row > .g-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner"
-    ).click({ force: true });
+    cy.get('#hemoglobin > .ant-row > .r-bg > .ant-radio-wrapper > .ant-radio > .ant-radio-inner').click({ force: true });
     //Submit
-    cy.get('button[type="submit"] span').click(
-      { force: true },
-      { multiple: true }
-    );
+    // cy.get('button[type="submit"] span').click(
+    //   { multiple: true }
+    // );
+    cy.get(':nth-child(8) > .ant-modal-root > .ant-modal-wrap > .ant-modal > .ant-modal-content > .ant-modal-body > .ant-form > .ant-row.center_div > .pt-6 > .ant-btn > span').click({ force: true })
     //Feeding
     cy.get(
       "#nutrition_screening_feeding > .ant-row > :nth-child(2) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
@@ -307,6 +307,7 @@ describe("Main Login", () => {
       "#following_information_education_has_been_imparted_on_the_basis_of_anticipated_discharge_needs > .ant-row > :nth-child(2) > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input"
     ).click();
     //Save
-    // cy.get(".ant-col-8 > .ant-btn").click({ force: true });
+    cy.get('button[type="button"] span').eq(0).click()
+    cy.get('.ant-notification-notice').should('be.visible')
   });
 });
