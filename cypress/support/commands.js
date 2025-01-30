@@ -53,13 +53,9 @@ Cypress.Commands.add("ElderlyCare_Login", (username, password) => {
   cy.get(".ant-btn").click()
 });
 
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// -----------------------------Employee Locator Dashboard------------------------------
+Cypress.Commands.add("EmployeeLocator_login", (username, password) => {
+  cy.get('#loginForm_username').type(username);
+  cy.get('#loginForm_password').type(password);
+  cy.get('.ant-btn').click();
+});
