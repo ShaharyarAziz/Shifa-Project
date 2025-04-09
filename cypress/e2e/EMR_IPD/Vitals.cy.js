@@ -9,24 +9,25 @@ describe("Main Login", () => {
     cy.IPD_login("17378", 123);
     cy.wait(2000);
     cy.get(":nth-child(1) > .pop > .logo").click();
-    cy.wait(2000);
-    cy.get(".ant-select-selector").click();
+    cy.wait(3000);
+    cy.get(".ant-select-selector").click({ multiple: true });
 
-    cy.contains("B-3").click({ force: true });
+    // cy.contains("A-0").click({ force: true });
+    cy.get("div.ant-select-item-option-selected div").click();
 
     // cy.contains('span', 'Location change successfully')
-   
+
     //Patient Select
     cy.wait(3000);
     cy.get("body").then(($body) => {
       // If the patient list is visible, click on the patient
       if (
         $body.find(
-          '[data-row-key="22027427"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="901702"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).length > 0
       ) {
         cy.get(
-          '[data-row-key="22027427"] > :nth-child(4) > .ant-row > a > .patient-name-text'
+          '[data-row-key="901702"] > :nth-child(4) > .ant-row > a > .patient-name-text'
         ).click({ force: true });
       } else {
         // If patient list is not visible or the element doesn't exist, throw an error
@@ -37,7 +38,7 @@ describe("Main Login", () => {
       }
       //Vitals Page
       // cy.get('a[href="/shifa/vital"]').click();
-      cy.get('li[role="menuitem"]').eq(2).click()
+      cy.get('li[role="menuitem"]').eq(2).click();
       //Vitals Options
       //Unable to stand
       cy.get(

@@ -50,7 +50,7 @@ describe("Automation Testing", () => {
     cy.contains(" New York, New York, United States of America").click();
     cy.wait(2000);
     // Email*
-    cy.get("#Users_UID_email_address_create").type("shaharyar.aziz21@test.com");
+    cy.get("#Users_UID_email_address_create").type("shaharyar.aziz212@test.com");
     // Zip Code*
     cy.get("#Users_UID_zipcode_create").type(10001);
 
