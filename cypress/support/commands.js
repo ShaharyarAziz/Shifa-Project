@@ -72,13 +72,28 @@ Cypress.Commands.add("ER_Triage_Login", (username, password) => {
 });
 
 
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+
+Cypress.Commands.add("ER_Token_Login", (username, password) => {
+  cy.get("#loginForm_email").type(username);
+  cy.get('#loginForm_password').type(password);
+  cy.wait(1000);
+  cy.get(".ant-btn").click()
+});
+
+
+Cypress.Commands.add("ER_Triage_Login", (username, password) => {
+  cy.get("#loginForm_email").type(username);
+  cy.get('#loginForm_password').type(password);
+  cy.wait(1000);
+  cy.get(".ant-btn").click()
+});
+
+
+// -----------------------------Employee Locator Dashboard------------------------------
+Cypress.Commands.add("EmployeeLocator_login", (username, password) => {
+  cy.get('#loginForm_username').type(username);
+  cy.get('#loginForm_password').type(password);
+  cy.get('.ant-btn').click();
+});

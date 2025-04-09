@@ -446,33 +446,23 @@ describe("Main Login", () => {
     //NEONATAL SKIN RISK ASSESSMENT (NSRA) TOOL
     cy.get("#nsra_assessment").click();
     //Current Gestational Age
-    cy.get(
-      "#current_gestational_age > :nth-child(1) > .ant-radio > .ant-radio-inner"
-    ).click({ force: true });
+    cy.get('#current_gestational_age > :nth-child(4) > .ant-radio > .ant-radio-inner').click({ force: true });
     // Sensory Perception
-    cy.get(
-      "#sensory_perception > :nth-child(2) > .ant-radio > .ant-radio-inner"
-    ).click({ force: true });
+    cy.get('#sensory_perception > :nth-child(4) > .ant-radio > .ant-radio-inner').click({ force: true });
     //Activity/ Mobility
-    cy.get("#activity_mobility > :nth-child(3) > .ant-radio").click({
+    cy.get('#activity_mobility > :nth-child(4) > .ant-radio').click({
       force: true,
     });
     //Moisture
-    cy.get("#moisture > :nth-child(2) > .ant-radio").click({ force: true });
+    cy.get('#moisture > :nth-child(4) > .ant-radio').click({ force: true });
     // Respiratory Support
-    cy.get(
-      "#respiratory_support > :nth-child(1) > .ant-radio > .ant-radio-inner"
-    ).click({ force: true });
+    cy.get('#respiratory_support > :nth-child(4) > .ant-radio').click({ force: true });
     // ASkin Integrity
-    cy.get(
-      "#skin_integrity > :nth-child(3) > .ant-radio > .ant-radio-inner"
-    ).click({ force: true });
+    cy.get('#skin_integrity > :nth-child(4) > .ant-radio').click({ force: true });
     // Blood Collection
-    cy.get(
-      "#blood_collection > :nth-child(1) > .ant-radio > .ant-radio-inner"
-    ).click({ force: true });
+    cy.get('#blood_collection > :nth-child(3) > .ant-radio > .ant-radio-inner').click({ force: true });
     // Nutrition
-    cy.get("#nutrition > :nth-child(4) > .ant-radio > .ant-radio-inner").click({
+    cy.get('#nutrition > :nth-child(4) > .ant-radio').click({
       force: true,
     });
     //Submit
